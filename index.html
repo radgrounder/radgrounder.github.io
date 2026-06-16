@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html class="fontawesome-i2svg-active fontawesome-i2svg-complete">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="description"
+          content="RadGrounder: Scalable Training of Spatially Grounded 2D Vision-Language Models for Radiology">
+    <meta name="keywords" content="RadGrounder, RefRad2D, 2D radiology, vision-language model, visual grounding, PaliGemma, CT, MRI, medical imaging">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RadGrounder</title>
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="svgstuff.css">
+    <link rel="stylesheet" href="bulma.min.css">
+    <link rel="stylesheet" href="bulma-carousel.min.css">
+    <link rel="stylesheet" href="bulma-slider.min.css">
+    <link rel="stylesheet" href="fontawesome.all.min.css">
+    <link rel="stylesheet" href="academicons.min.css">
+    <link rel="stylesheet" href="projects.css">
+
+    <script src="jquery.min.js"></script>
+    <script src="main.js"></script>
+    <script defer="defer" src="fontawesome.all.min.js"></script>
+    <script src="bulma-carousel.min.js"></script>
+    <script src="bulma-slider.min.js"></script>
+    <script src="projects.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+    <div class="navbar-menu">
+        <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+            <a class="navbar-item" href="https://ging.ai">
+                <span class="icon">
+                    <i class="fas fa-home"></i>
+                </span>
+            </a>
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                    More Research
+                </a>
+                <div class="navbar-dropdown">
+                    <a class="navbar-item" href="https://radfinder.github.io/" target="_blank">
+                        RadFinder
+                    </a>
+                    <a class="navbar-item" href="https://entity-net.github.io/" target="_blank">
+                        EntityNet
+                    </a>
+                    <a class="navbar-item" href="https://github.com/lmb-freiburg/ovqa" target="_blank">
+                        Open-ended Visual Question Answering
+                    </a>
+                    <a class="navbar-item" href="https://ovad-benchmark.github.io/" target="_blank">
+                        Open Vocabulary Attribute Detection
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- ===================== HERO / TITLE ===================== -->
+<section class="hero">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                  <h1 class="title is-1 publication-title">Scalable Training of Spatially Grounded<br/>2D Vision&ndash;Language Models for Radiology</h1>
+                    <div class="is-size-5 publication-authors">
+                        <span class="author-block"><a href="https://ging.ai/">Simon Ging</a><sup>1,*</sup>,</span>
+                        <span class="author-block"><a href="https://github.com/yusufSLCN">Yusuf Salcan</a><sup>1,*</sup>,</span>
+                        <span class="author-block"><a href="https://robintibor.github.io/">Robin Schirrmeister</a><sup>2</sup>,</span>
+                        <span class="author-block"><a href="https://www.linkedin.com/in/philipp-g-arnold/">Philipp Arnold</a><sup>2</sup>,</span>
+                        <span class="author-block"><a href="https://www.linkedin.com/in/elmar-kotter-4a671334/">Elmar Kotter</a><sup>2</sup>,</span>
+                        <span class="author-block"><a href="https://behzadbozorgtabar.com/">Behzad Bozorgtabar</a><sup>3</sup>,</span>
+                        <span class="author-block"><a href="https://lmb.informatik.uni-freiburg.de/people/brox/">Thomas Brox</a><sup>1</sup></span>
+                    </div>
+                    <div class="is-size-6 publication-authors" style="margin-top: 0.5rem;">
+                        <span><sup>1</sup><a href="https://lmb.informatik.uni-freiburg.de/">Computer Vision Group</a>, University of Freiburg, Germany</span><br>
+                        <span><sup>2</sup><a href="https://www.uniklinik-freiburg.de/radiologie-en.html">Department of Radiology</a>, Medical Center &ndash; University of Freiburg, Germany</span><br>
+                        <span><sup>3</sup><a href="https://ece.au.dk/forskning/forsknings-og-udviklingsomraader/signal-processing-and-machine-learning/research-groups-alt/adaptive-agentic-ai-a3-lab">Adaptive &amp; Agentic AI (A3) Lab</a>, Aarhus University, Denmark</span>
+                    </div>
+                    <div class="is-size-6 publication-authors" style="margin-top: 0.4rem;">
+                        <span><sup>*</sup>Equal contribution</span>
+                    </div>
+
+                    <div class="column has-text-centered">
+                        <div class="publication-links">
+                            <!-- Project Page Link -->
+                            <span class="link-block">
+                                <a href="https://radgrounder.github.io"
+                                   class="external-link button is-normal is-rounded is-dark" target="_blank">
+                                    <span class="icon"><i class="fas fa-globe"></i></span>
+                                    <span>Project page</span>
+                                </a>
+                            </span>
+                            <!-- Paper Link -->
+                            <span class="link-block">
+                                <a href="paper.pdf"
+                                   class="external-link button is-normal is-rounded is-dark" target="_blank">
+                                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                                    <span>Paper</span>
+                                </a>
+                            </span>
+                            <!-- Code Link -->
+                            <span class="link-block">
+                                <a href="https://github.com/lmb-freiburg/RadGrounder"
+                                   class="external-link button is-normal is-rounded is-dark" target="_blank">
+                                    <span class="icon"><i class="fab fa-github"></i></span>
+                                    <span>Code</span>
+                                </a>
+                            </span>
+                            <!-- HF Models Link -->
+                            <span class="link-block">
+                                <a href="https://huggingface.co/lmb-freiburg/radgrounder"
+                                   class="external-link button is-normal is-rounded is-dark" target="_blank">
+                                    <span>🤗 Models</span>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== NEWS ===================== -->
+<section class="section" style="padding-top: 1rem; padding-bottom: 0rem;">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">News</h2>
+                <div class="content has-text-left">
+                    <ul>
+                        <li>June 2026: <b>Code and model checkpoints</b> released, including the grounding-annotation pipeline</li>
+                        <li>2026: <b>Accepted</b> to MICCAI 2026</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== OVERVIEW FIGURE ===================== -->
+<section class="hero teaser">
+    <div class="container is-max-desktop" style="width: 100%;">
+        <div class="hero-body" style="padding-bottom: 2rem; padding-top: 2rem;">
+            <h2 class="title is-3 has-text-centered">Overview</h2>
+            <div class="content has-text-centered">
+                <img src="overview.png" alt="RefRad2D grounding-annotation pipeline overview" style="width: 100%; max-width: 1000px;">
+                <p style="margin-top: 0.75rem; text-align: center; max-width: 900px; margin-left: auto; margin-right: auto;">
+                    <b>Generating spatial grounding labels without manual annotation.</b>
+                    We process full 3D CT and MR volumes with TotalSegmentator to produce 3D segmentation masks, and extract anatomical
+                    keywords from the matching report with an LLM (gpt-oss-120B). A strict set-intersection filter
+                    (<i>C<sub>T</sub> &cap; C<sub>I</sub> &ne; &empty;</i>) keeps only slices where the mentioned entity is actually present,
+                    yielding dense, high-quality 2D pixel-level annotations that link textual findings to image regions.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== ABSTRACT ===================== -->
+<section class="section" style="padding-top: 3rem;">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Abstract</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        We study how to train visually grounded vision&ndash;language models (VLMs) for radiology without manual spatial annotations.
+                        We introduce <b>RefRad2D</b>, a large-scale bilingual (German/English) dataset of 1.2M CT and MR image&ndash;text pairs derived from
+                        clinical practice, with task-specific VQA and spatial grounding subsets generated automatically via LLM-based curation and
+                        automated segmentation.
+                    </p>
+                    <p>
+                        Trained on this data, our model <b>RadGrounder</b> jointly performs report generation, visual question answering, and spatial
+                        grounding via bounding-box detection or segmentation. On external VQA benchmarks (Slake, VQA-RAD), RadGrounder achieves
+                        competitive results with specialized medical VLMs. Adding our clinical data to the training mixture improves open-ended VQA
+                        over fine-tuning on the downstream datasets alone, showing the transferability of our dataset. Crucially, adding grounding
+                        supervision does <em>not</em> degrade language quality, enabling spatially verifiable outputs at no cost to VQA performance.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== METHOD ===================== -->
+<section class="section" style="padding-top: 3rem;">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Method</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        <b>RefRad2D dataset.</b>
+                        RefRad2D contains 760,409 CT and 256,197 MR image&ndash;report pairs derived from clinical routine.
+                        From these we automatically build two task-specific subsets: <em>RefRad2D-Grounded</em>, with 236,157 grounded slice&ndash;text
+                        pairs (217,692 CT, 18,465 MR), and <em>RefRad2D-VQA</em> (~9.6M QA pairs), generated with Gemma&nbsp;3&nbsp;(27B) as five QA pairs
+                        per image from clinical findings plus three from slice metadata. Grounding labels are obtained by running TotalSegmentator
+                        on the 3D volumes (harmonized to a unified schema of <i>C</i>&nbsp;=&nbsp;121 anatomical classes) and matching the resulting
+                        masks to anatomical mentions extracted from each report.
+                    </p>
+                    <p>
+                        <b>Architecture.</b>
+                        RadGrounder builds on <b>PaliGemma&nbsp;2&nbsp;(3B)</b>, comprising a SigLIP-So400m vision encoder and a Gemma-2B language
+                        decoder. The model processes an image into visual tokens that are concatenated with text tokens and processed autoregressively.
+                        We investigate two grounding strategies on top of this foundation.
+                    </p>
+                    <p>
+                        <b>Bounding-box detection.</b>
+                        We treat spatial grounding as a text-generation task, extending the vocabulary with coordinate tokens (512 bins) and
+                        class-identifying tokens. The model generates a structured sequence
+                        <code>&lt;p bbox&gt; [LOC] id=&lt;segID&gt; KEYWORD &lt;/p&gt;</code>, where <code>[LOC]</code> denotes the box coordinates and
+                        <code>id</code> maps to the unified anatomical schema. A class-wise merging strategy resolves multiple instances of the same organ.
+                    </p>
+                    <p>
+                        <b>Segmentation head.</b>
+                        We also explore pixel-level grounding via a lightweight mask decoder following VividMed and SAM. When the model emits a
+                        <code>&lt;/seg&gt;</code> token, its hidden state is projected into a 256-dim prompt that drives a Two-Way Transformer over the
+                        image embeddings to produce a binary mask. The model is trained end-to-end with an autoregressive cross-entropy loss
+                        <i>L<sub>txt</sub></i>; the segmentation variant adds an auxiliary loss
+                        <i>L</i> = <i>L<sub>txt</sub></i> + &lambda;<sub>seg</sub>(<i>L<sub>focal</sub></i> + <i>L<sub>dice</sub></i>).
+                    </p>
+                    <p>
+                        <b>Evaluation: LLMScore &amp; G-IoU.</b>
+                        Because n-gram metrics (e.g., CIDEr) struggle with the semantic equivalence of medical text, we introduce <b>LLMScore</b>,
+                        an LLM-as-a-judge metric (Gemma&nbsp;3&nbsp;27B) on a 5-point scale. Validated against three radiologists, it reaches an
+                        inter-annotator agreement of Krippendorff's &alpha;&nbsp;=&nbsp;0.958 and a Pearson correlation of <i>r</i>&nbsp;=&nbsp;0.977 with
+                        mean human scores. We additionally propose <b>Grounding-IoU (G-IoU)</b>, which jointly measures spatial and semantic fidelity by
+                        weighting per-entity spatial IoU with the cosine similarity of the entity text embeddings.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== QUALITATIVE EXAMPLE ===================== -->
+<section class="hero teaser">
+    <div class="container is-max-desktop" style="width: 100%;">
+        <div class="hero-body" style="padding-bottom: 2rem; padding-top: 2rem;">
+            <h2 class="title is-3 has-text-centered">Qualitative Example</h2>
+            <div class="content has-text-centered">
+                <img src="qualitative.png" alt="Qualitative example of RadGrounder report generation on an abdominal CT slice" style="width: 100%; max-width: 850px;">
+                <p style="margin-top: 0.75rem; text-align: center; max-width: 900px; margin-left: auto; margin-right: auto;">
+                    <b>Report generation on an abdominal CT slice.</b>
+                    RadGrounder identifies increased mesenteric lymph nodes and accurately estimates their size. Despite a low traditional
+                    CIDEr score (1.08), the LLM-as-a-judge correctly assigns a high factual score (0.75) by recognizing the semantic
+                    equivalence of the measurements (1.2&nbsp;cm vs. 10&nbsp;mm).
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== RESULTS ===================== -->
+<section class="section" style="padding-top: 3rem;">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Results</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        On the external VQA benchmarks <b>Slake</b> and <b>VQA-RAD</b>, RadGrounder is competitive with specialized medical VLMs while
+                        adding verifiable spatial grounding at no cost to VQA or report quality. The table below reports test-set means for both the
+                        detection and segmentation variants (the paper reports 95% bootstrap confidence intervals, <i>B</i>&nbsp;=&nbsp;10,000, over the
+                        same samples). <b>LLMScore</b> is the LLM-as-judge metric (Gemma&nbsp;3&nbsp;27B).
+                    </p>
+                    <div class="table-container">
+                        <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+                            <thead>
+                                <tr>
+                                    <th>Model</th><th>Split</th><th>CIDEr</th><th>F1</th><th>Acc</th><th>LLMScore</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Detection</td><td>SLAKE open</td><td>3.00</td><td>0.87</td><td>0.83</td><td>4.52</td></tr>
+                                <tr><td>Detection</td><td>SLAKE closed</td><td>2.33</td><td>0.91</td><td>0.91</td><td>4.65</td></tr>
+                                <tr><td>Detection</td><td>VQA-RAD</td><td>0.99</td><td>0.50</td><td>0.44</td><td>3.22</td></tr>
+                                <tr><td>Segmentation</td><td>SLAKE open</td><td>3.02</td><td>0.86</td><td>0.82</td><td>4.49</td></tr>
+                                <tr><td>Segmentation</td><td>SLAKE closed</td><td>2.29</td><td>0.90</td><td>0.90</td><td>4.59</td></tr>
+                                <tr><td>Segmentation</td><td>VQA-RAD</td><td>1.00</td><td>0.50</td><td>0.45</td><td>3.30</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p>
+                        Both released checkpoints are PaliGemma-2 (3B) with a frozen fine-tuned SigLIP encoder, trained on report&nbsp;+&nbsp;VQA&nbsp;+&nbsp;SLAKE&nbsp;+&nbsp;VQA-RAD
+                        plus one grounding task. All models were trained on a single NVIDIA H100 GPU for 6 epochs (~2.5 days). Adding grounding
+                        supervision leaves language quality intact, yielding a single model that can answer questions, write reports, and point to
+                        <em>where</em> in the image its answer comes from.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== ACKNOWLEDGEMENTS ===================== -->
+<section class="section" style="padding-top: 3rem;">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Acknowledgements</h2>
+                <div class="content has-text-justified">
+                    <p>
+                        This research was funded by the Deutsche Forschungsgemeinschaft (DFG, German Research Foundation). We thank the
+                        Department of Radiology at the Medical Center &ndash; University of Freiburg for providing the clinical data underlying RefRad2D.
+                        The clinical RefRad2D dataset is private and not distributed; the public SLAKE and VQA-RAD benchmarks work out of the box.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== BIBTEX ===================== -->
+<section class="section" style="padding-top: 3rem;">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">BibTeX</h2>
+                <div class="content has-text-justified">
+        <pre><code>@inproceedings{ging2026radgrounder,
+  author    = {Simon Ging and Yusuf Salcan and Robin Schirrmeister and Philipp Arnold and Elmar Kotter and Behzad Bozorgtabar and Thomas Brox},
+  title     = {Scalable Training of Spatially Grounded 2{D} Vision--Language Models for Radiology},
+  booktitle = {Medical Image Computing and Computer Assisted Intervention -- {MICCAI} 2026},
+  series    = {Lecture Notes in Computer Science},
+  publisher = {Springer},
+  year      = {2026},
+  note      = {To appear}
+}</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-8">
+                <div class="content">
+                    <p>
+                        Webpage template adapted from <a rel="license" href="https://nerfies.github.io/">Nerfies</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="flickity.pkgd.min.js"></script>
+
+</body>
+</html>
