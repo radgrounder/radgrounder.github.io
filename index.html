@@ -251,12 +251,13 @@
         <div class="hero-body" style="padding-bottom: 2rem; padding-top: 2rem;">
             <h2 class="title is-3 has-text-centered">Qualitative Example</h2>
             <div class="content has-text-centered">
-                <img src="qualitative.png" alt="Qualitative example of RadGrounder report generation on an abdominal CT slice" style="width: 100%; max-width: 850px;">
+                <img src="grounding_example.png" alt="Detection grounding example: RadGrounder localizes a nodular lesion in the left lower lobe on a chest CT" style="width: 100%; max-width: 900px;">
                 <p style="margin-top: 0.75rem; text-align: center; max-width: 900px; margin-left: auto; margin-right: auto;">
-                    <b>Report generation on an abdominal CT slice.</b>
-                    RadGrounder identifies increased mesenteric lymph nodes and accurately estimates their size. Despite a low traditional
-                    CIDEr score (1.08), the LLM-as-a-judge correctly assigns a high factual score (0.75) by recognizing the semantic
-                    equivalence of the measurements (1.2&nbsp;cm vs. 10&nbsp;mm).
+                    <b>Detection grounding on a chest CT (lung window).</b>
+                    RadGrounder localizes a nodular lesion in the <span style="color:#d62728;"><b>left lower lobe</b></span>,
+                    generating a bounding box (prediction in red) that closely matches the ground truth (green) both spatially and
+                    semantically &mdash; <b>G-IoU 0.95</b>. The box is produced jointly with the generated report, so the model points to
+                    exactly <em>where</em> in the image its finding comes from.
                 </p>
             </div>
         </div>
