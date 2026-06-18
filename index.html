@@ -75,7 +75,7 @@
                   <h1 class="title is-1 publication-title">Scalable Training of Spatially Grounded<br/>2D Vision&ndash;Language Models for Radiology</h1>
                     <div class="is-size-5 publication-authors">
                         <span class="author-block"><a href="https://ging.ai/">Simon Ging</a><sup>1,*</sup>,</span>
-                        <span class="author-block"><a href="https://github.com/yusufSLCN">Yusuf Salcan</a><sup>1,*</sup>,</span>
+                        <span class="author-block"><a href="https://www.linkedin.com/in/yusuf-furkan-salcan-b64814155/">Yusuf Salcan</a><sup>1,*</sup>,</span>
                         <span class="author-block"><a href="https://robintibor.github.io/">Robin Schirrmeister</a><sup>2</sup>,</span>
                         <span class="author-block"><a href="https://www.linkedin.com/in/philipp-g-arnold/">Philipp Arnold</a><sup>2</sup>,</span>
                         <span class="author-block"><a href="https://www.linkedin.com/in/elmar-kotter-4a671334/">Elmar Kotter</a><sup>2</sup>,</span>
@@ -272,25 +272,35 @@
                 <h2 class="title is-3">Results</h2>
                 <div class="content has-text-justified">
                     <p>
-                        On the external VQA benchmarks <b>Slake</b> and <b>VQA-RAD</b>, RadGrounder is competitive with specialized medical VLMs while
-                        adding verifiable spatial grounding at no cost to VQA or report quality. The table below reports test-set means for both the
-                        detection and segmentation variants (the paper reports 95% bootstrap confidence intervals, <i>B</i>&nbsp;=&nbsp;10,000, over the
-                        same samples). <b>LLMScore</b> is the LLM-as-judge metric (Gemma&nbsp;3&nbsp;27B).
+                        On the external VQA benchmarks <b>Slake</b> and <b>VQA-RAD</b>, RadGrounder is competitive with specialized medical VLMs.
+                        With our standard configuration (detection grounding, frozen fine-tuned SigLIP), it reaches Slake open-question
+                        <b>F1&nbsp;87.7</b> and closed-question <b>accuracy&nbsp;90.3</b> &mdash; comparable to BiomedGPT-B (85.2&nbsp;/&nbsp;89.9) and
+                        LLaVA-Med (86.8 closed acc), and surpassing Med-Gemini (75.8&nbsp;/&nbsp;84.8) and MedGemma (72.3&nbsp;/&nbsp;87.6). On VQA-RAD it
+                        achieves the <b>highest open-question F1 (50.7)</b> among compared methods. All numbers are 95% bootstrap means
+                        (<i>B</i>&nbsp;=&nbsp;10,000); best per column in <b>bold</b>, &ldquo;&ndash;&rdquo; = not reported for that split.
                     </p>
                     <div class="table-container">
                         <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
                             <thead>
                                 <tr>
-                                    <th>Model</th><th>Split</th><th>CIDEr</th><th>F1</th><th>Acc</th><th>LLMScore</th>
+                                    <th rowspan="2" style="vertical-align: bottom;">Method</th>
+                                    <th colspan="2" class="has-text-centered">Slake</th>
+                                    <th colspan="2" class="has-text-centered">VQA-RAD</th>
+                                </tr>
+                                <tr>
+                                    <th class="has-text-centered">F1 (open)</th><th class="has-text-centered">Acc (closed)</th>
+                                    <th class="has-text-centered">F1 (open)</th><th class="has-text-centered">Acc (closed)</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><td>Detection</td><td>SLAKE open</td><td>3.00</td><td>0.87</td><td>0.83</td><td>4.52</td></tr>
-                                <tr><td>Detection</td><td>SLAKE closed</td><td>2.33</td><td>0.91</td><td>0.91</td><td>4.65</td></tr>
-                                <tr><td>Detection</td><td>VQA-RAD</td><td>0.99</td><td>0.50</td><td>0.44</td><td>3.22</td></tr>
-                                <tr><td>Segmentation</td><td>SLAKE open</td><td>3.02</td><td>0.86</td><td>0.82</td><td>4.49</td></tr>
-                                <tr><td>Segmentation</td><td>SLAKE closed</td><td>2.29</td><td>0.90</td><td>0.90</td><td>4.59</td></tr>
-                                <tr><td>Segmentation</td><td>VQA-RAD</td><td>1.00</td><td>0.50</td><td>0.45</td><td>3.30</td></tr>
+                                <tr><td>PaliGemma&nbsp;2 (3B)</td><td>24.5</td><td>58.1</td><td>37.9</td><td>55.6</td></tr>
+                                <tr><td>Gemma&nbsp;3 (4B)</td><td>40.2</td><td>53.0</td><td>33.6</td><td>33.6</td></tr>
+                                <tr><td>MedGemma (4B)</td><td>72.3</td><td>87.6</td><td>49.9</td><td>69.1</td></tr>
+                                <tr><td>BiomedGPT-B</td><td>85.2</td><td>89.9</td><td>&ndash;</td><td>&ndash;</td></tr>
+                                <tr><td>LLaVA-Med</td><td>&ndash;</td><td>86.8</td><td>&ndash;</td><td>&ndash;</td></tr>
+                                <tr><td>RadFM (14B)</td><td>84.4</td><td>&ndash;</td><td>&ndash;</td><td>&ndash;</td></tr>
+                                <tr><td>Med-Gemini</td><td>75.8</td><td>84.8</td><td>&ndash;</td><td><b>78.8</b></td></tr>
+                                <tr><td><b>RadGrounder (ours)</b></td><td><b>87.7</b></td><td><b>90.3</b></td><td><b>50.7</b></td><td>64.7</td></tr>
                             </tbody>
                         </table>
                     </div>
