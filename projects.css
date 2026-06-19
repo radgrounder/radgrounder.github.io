@@ -32,7 +32,7 @@ body {
     color: #000;
 }
 
-.link-block a {
+.link-block .button {
     margin-top: 5px;
     margin-bottom: 5px;
 }
@@ -153,6 +153,5 @@ body {
 .eql-cntrb { 
   font-size: smaller;
 }
-
 
 
