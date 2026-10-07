@@ -3,7 +3,7 @@
 Project website for the MICCAI 2026 paper
 **Scalable Training of Spatially Grounded 2D Vision–Language Models for Radiology**.
 
-- Paper code: https://github.com/lmb-freiburg/RadGrounder
+- Paper code: https://github.com/lmb-freiburg/radgrounder
 - Models: https://huggingface.co/lmb-freiburg/radgrounder
 
 Static site (HTML/CSS/JS, no build step) served via GitHub Pages. The template is
